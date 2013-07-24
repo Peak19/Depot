@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depeaux</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <title>Pragpog Books Online Store</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<!-- The line that follows is used to link to our application's scripts -->
   <%= csrf_meta_tags %>
 </head>
-<body class= '<%= controller.controller_name %>'>	
-
-<%= yield %>
-
+<!-- the line that follows is important for forgery attacks -->
+<body class= '<%= controller.controller_name %>'>
+	<div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatic Bookshelf" %>
+    <%= @page_title || "Pragmatic Bookshelf" %>	
+  </div>
+    <div id="columns">
+      <div id="side">
+        <ul>
+          <li><a href="http://www....">Home</a></li>
+          <li><a href="http://www..../faq">Questions</a></li></li>
+          <li><a href="http://www..../news">News</a></li>
+          <li><a href="http://www..../contact">Contact</a></li>
+        </ul>
+      </div>
+    <div id="main">
+<!-- Yield calls in index.html.erb catalog content -->
+      <%= yield %>
+    </div>
+  </div>
 </body>
-</html>	
+
+
